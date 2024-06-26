@@ -1,0 +1,64 @@
+@font-face {
+    font-family: 'Inter';
+    src: local('Inter Regular'), local('Inter-Regular'),
+        url('../fonts/Inter-Regular.woff2') format('woff2'),
+        url('../fonts/Inter-Regular.woff') format('woff'),
+        url('../fonts/Inter-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+  }
+@font-face {
+	font-family: 'Inter';
+	src: local('Inter Medium'), local('Inter-Medium'),
+			url('../fonts/Inter-Medium.woff2') format('woff2'),
+			url('../fonts/Inter-Medium.woff') format('woff'),
+			url('../fonts/Inter-Medium.ttf') format('truetype');
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Inter';
+	src: local('Inter Semi Bold'), local('Inter-Semi-Bold'),
+			url('../fonts/Inter-SemiBold.woff2') format('woff2'),
+			url('../fonts/Inter-SemiBold.woff') format('woff'),
+			url('../fonts/Inter-SemiBold.ttf') format('truetype');
+	font-weight: 600;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'San Francisco Pro';
+	src: local('San Francisco Pro Display Regular'), local('San-Francisco-Pro-Display-Regular'),
+			url('../fonts/SFProDisplay-Regular.woff2') format('woff2'),
+			url('../fonts/SFProDisplay-Regular.woff') format('woff'),
+			url('../fonts/SFProDisplay-Regular.ttf') format('truetype');
+	font-weight: 400;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'San Francisco Pro';
+	src: local('San Francisco Pro Display Medium'), local('San-Francisco-Pro-Display-Medium'),
+			url('../fonts/SFProDisplay-Medium.woff2') format('woff2'),
+			url('../fonts/SFProDisplay-Medium.woff') format('woff'),
+			url('../fonts/SFProDisplay-Medium.ttf') format('truetype');
+	font-weight: 500;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'San Francisco Pro';
+	src: local('San Francisco Pro Display Bold'), local('San-Francisco-Pro-Display-Bold'),
+			url('../fonts/SFProDisplay-Bold.woff2') format('woff2'),
+			url('../fonts/SFProDisplay-Bold.woff') format('woff'),
+			url('../fonts/SFProDisplay-Bold.ttf') format('truetype');
+	font-weight: 700;
+	font-style: normal;
+}
+@font-face {
+  font-family: 'SF-Mono';
+  src: url('..fonts/SF-Mono-Regular.woff2') format('woff2'),
+       url('..fonts/SF-Mono-Regular.woff') format('woff'),
+			url('..fonts/SF-Mono-Regular.woff') format('truetype');
+	font-weight: 400;
+	font-style: normal;
+}

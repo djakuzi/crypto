@@ -1,0 +1,266 @@
+@import "reset";
+@import "variables";
+@import "fonts";
+
+$minWidth: 375;
+$maxWidth: 1920;
+
+//Адаптивное свойство
+@mixin adaptiv-value($indentType, $pcSize, $mobSize) {
+	$addSize: $pcSize - $mobSize;
+	#{$indentType}: calc(#{$mobSize + px} + #{$addSize} * ((100vw - #{$minWidth+px}) / #{$maxWidth - $minWidth}));
+}
+
+body {
+	font-family: "Inter";
+	font-weight: 500;
+	@include adaptiv-value("font-size", 20, 18);
+	line-height: 1.2;
+	color: var(--dark);
+	background-color: #fff;
+
+	&.dark-theme {
+		background-color: var(--dark);
+		color: white;
+	}
+}
+
+section {
+}
+
+.container {
+	padding: 0 20px;
+	margin: 0 auto;
+	max-width: 1240px;
+}
+
+.btn {
+	background-color: var(--main);
+	@include adaptiv-value("padding", 18, 12);
+	@include adaptiv-value("padding-left", 42, 32);
+	@include adaptiv-value("padding-right", 42, 32);
+	@include adaptiv-value("font-size", 20, 18);
+	border: 1px solid transparent;
+	color: white;
+	border-radius: 100px;
+	font-weight: 500;
+	user-select: none;
+
+	@media (pointer: fine) {
+		&:hover {
+			background-color: var(--deep-main);
+		}
+	}
+
+	&_sec {
+		background-color: rgba(var(--deep-main), 0.12);
+		color: var(--deep-main);
+
+		@media (pointer: fine) {
+			&:hover {
+				background-color: rgba(65, 164, 223, 0.16);
+			}
+		}
+	}
+
+	&_hollow {
+		border-color: rgba(white, 0.6);
+		background-color: transparent;
+
+		@media (pointer: fine) {
+			&:hover {
+				background-color: transparent;
+				border-color: white;
+			}
+		}
+	}
+}
+
+.title {
+	@include adaptiv-value("font-size", 56, 32);
+	font-weight: 600;
+	line-height: 1.1;
+	text-align: center;
+	letter-spacing: -1px;
+
+	span {
+		color: var(--main);
+	}
+}
+
+.subtitle {
+	@include adaptiv-value("font-size", 42, 28);
+	font-weight: 600;
+	line-height: 1.1;
+	letter-spacing: -1px;
+}
+
+.text {
+	font-weight: 400;
+}
+
+.tg {
+	@include adaptiv-value("padding-left", 46, 20);
+	@include adaptiv-value("padding-right", 46, 20);
+	border-radius: 24px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+	* {
+		font-family: "San Francisco Pro";
+		font-weight: 400;
+	}
+	&__wrapper {
+		display: flex;
+		flex-direction: column;
+		gap: 3px;
+		width: 100%;
+	}
+
+	&__msg-list {
+	}
+
+	&__actions {
+		@include adaptiv-value("border-radius", 16, 9);
+		border-top-left-radius: 0;
+		border-top-right-radius: 0;
+		overflow: hidden;
+	}
+}
+.tg-msg {
+	background-color: #fff;
+	color: var(--dark);
+	border-radius: 5px;
+	padding: 7px 11px;
+	word-break: break-word;
+	@include adaptiv-value("font-size", 20, 14);
+	position: relative;
+
+	img {
+		height: 1em;
+		vertical-align: middle;
+		margin-right: 0.2em;
+	}
+
+	b {
+		font-weight: 700;
+	}
+
+	&:first-child {
+		@include adaptiv-value("border-radius", 16, 9);
+		border-bottom-left-radius: 0;
+		border-bottom-right-radius: 0;
+	}
+
+	&:not(:last-child) {
+		margin-bottom: 3px;
+	}
+
+	.time {
+		color: rgba(17, 17, 17, 0.4);
+		font-weight: 500;
+		font-size: 0.75em;
+		padding-left: 5px;
+		padding-top: 0.4em;
+		float: right;
+	}
+	.clear {
+		clear: both;
+	}
+
+	&.tail {
+		@include adaptiv-value("border-bottom-left-radius", 16, 9);
+		@include adaptiv-value("border-bottom-right-radius", 16, 9);
+
+		&::before {
+			content: "";
+			background: url("../img/icons/msg-tail.svg") bottom right / contain no-repeat;
+			width: 25px;
+			height: 25px;
+			position: absolute;
+			right: 100%;
+			bottom: 0;
+			display: block;
+			transform: translateX(70%);
+		}
+	}
+}
+.tg-link {
+	background-color: #96adc6;
+	position: relative;
+
+	&::after {
+		content: "";
+		background: url("../img/icons/tg-link.svg") center / contain no-repeat;
+		position: absolute;
+		width: 7px;
+		height: 7px;
+		top: 6px;
+		right: 6px;
+	}
+}
+.tg-action {
+	font-weight: 500;
+	color: white;
+	width: 100%;
+	padding: 11px 0;
+	border-radius: 5px;
+	text-align: center;
+	@include adaptiv-value("font-size", 19, 10);
+}
+.tg-code {
+	background-color: var(--dark);
+	padding: 11px;
+	font-family: "SF-Mono", monospace;
+	line-height: 1.5;
+	color: white;
+	@include adaptiv-value("font-size", 18, 12);
+
+	.blue {
+		color: #61baef;
+	}
+	.yellow {
+		color: #fcef8f;
+	}
+	.red {
+		color: #d46565;
+	}
+	pre {
+		tab-size: 4;
+	}
+}
+.blue {
+	color: var(--main);
+	font-weight: 500;
+}
+
+body {
+	&.dark-theme {
+		.text {
+			color: rgba(255, 255, 255, 0.8);
+		}
+	}
+}
+
+img {
+	pointer-events: none;
+	user-select: none;
+}
+
+//===========================================================
+
+@import "header";
+@import "intro";
+@import "usecases";
+@import "features";
+@import "start";
+@import "api";
+@import "community";
+@import "footer";
+
+//===========================================================
+
+.dn {
+	display: none;
+}
